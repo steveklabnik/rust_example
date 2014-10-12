@@ -5,7 +5,7 @@ extern char *hello_rust(void);
 
 VALUE hello(void) {
     char *hello = hello_rust();
-    printf("%s", hello);
+    printf("%s\n", hello);
 
     return Qnil;
 }

@@ -12,7 +12,7 @@ use core::str::StrSlice;
 
 #[no_mangle]
 pub extern "C" fn hello_rust() -> *const u8 {
-    "Hello, world!".as_ptr()
+    "Hello, world!\0".as_ptr()
 }
 
 #[no_mangle]
