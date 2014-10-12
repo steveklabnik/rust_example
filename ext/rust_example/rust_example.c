@@ -1,8 +1,10 @@
 #include<stdio.h>
 #include<ruby.h>
 
+#include<rust_example.h>
+
 VALUE hello(void) {
-    printf("Hello, world\n");
+    hello_rust();
 
     return Qnil;
 }

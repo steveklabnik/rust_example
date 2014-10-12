@@ -1,3 +1,4 @@
-#[test]
-fn it_works() {
+#[no_mangle]
+pub extern "C" fn hello_rust() {
+    println!("Hello, world!");
 }
