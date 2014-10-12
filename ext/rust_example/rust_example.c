@@ -2,7 +2,7 @@
 #include<ruby.h>
 
 VALUE hello(void) {
-    printf("Hello, world");
+    printf("Hello, world\n");
 
     return Qnil;
 }
