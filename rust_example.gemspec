@@ -20,4 +20,8 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
+
+	spec.executables = "rust_example"
+
+	spec.extensions << "ext/rust_example/extconf.rb"
 end
