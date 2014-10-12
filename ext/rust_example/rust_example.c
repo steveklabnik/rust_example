@@ -1,10 +1,11 @@
 #include<stdio.h>
 #include<ruby.h>
 
-#include<rust_example.h>
+extern char *hello_rust(void);
 
 VALUE hello(void) {
-    hello_rust();
+    char *hello = hello_rust();
+    printf("%s", hello);
 
     return Qnil;
 }
