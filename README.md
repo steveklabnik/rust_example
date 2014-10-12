@@ -1,6 +1,7 @@
 # RustExample
 
-TODO: Write a gem description
+This doesn't work yet. Type 'make' to try it out. I have errors with paths at
+the moment :(
 
 ## Installation
 
