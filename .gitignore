@@ -22,3 +22,4 @@ tmp
 *.a
 mkmf.log
 target
+ext/rust_example/Makefile
