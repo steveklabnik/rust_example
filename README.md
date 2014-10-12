@@ -1,7 +1,6 @@
 # RustExample
 
-This doesn't work yet. Type 'make' to try it out. I have errors with paths at
-the moment :(
+Type `make` and be on a Unix, probably just linux.
 
 ## Installation
 

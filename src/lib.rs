@@ -14,3 +14,6 @@ use core::str::StrSlice;
 pub extern "C" fn hello_rust() -> *const u8 {
     "Hello, world!".as_ptr()
 }
+
+#[no_mangle]
+pub extern "C" fn rust_example_init() { }
