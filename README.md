@@ -1,24 +1,20 @@
 # RustExample
 
-Type `make` and be on a Unix, probably just linux.
+This is a Ruby gem, written in Rust. It gives you an executable that prints
+"Hello, world!". Classic.
+
+It currently will only work on Linux. If you have a Windows or Mac machine, let
+me know, and I can push up versions for those platforms with your help!
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'rust_example'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Or install it with:
 
     $ gem install rust_example
 
 ## Usage
 
-TODO: Write usage instructions here
+Type `rust_example`. See "Hello, world!" print to the screen. Woo!
 
 ## Contributing
 
