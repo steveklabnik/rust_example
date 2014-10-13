@@ -15,6 +15,11 @@ order to make this work. So just
 And hopefully it'll work. I built this on Linux, and I _think_ it should work
 on OS X. I don't know anything about Windows in general. Help very welcome!
 
+UPDATE: @coffeejunk offered an OSX build
+[here](https://github.com/steveklabnik/rust_example/issues/1#issuecomment-58880039).
+I have pushed it to RubyGems, after checking it out. It seems legit to me, but
+I don't own a Mac, so use it at your own risk.
+
 So what does `make` do? This:
 
 ## Rust
