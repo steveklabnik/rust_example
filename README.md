@@ -49,6 +49,7 @@ And then do this from within the `ruby` directory:
     $ ruby extconf.rb
     $ cd ../..
     $ bundle
+    $ rake build
 
 ## Why all the mess?
 
