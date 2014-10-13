@@ -17,9 +17,6 @@ test/tmp
 test/version_tmp
 tmp
 *.bundle
-*.so
-*.o
-*.a
 mkmf.log
 target
 ext/rust_example/Makefile
