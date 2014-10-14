@@ -18,14 +18,14 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-	# This only works on Linux for now, but might as well make it generic for the
-	# future
-	spec.platform = Gem::Platform::CURRENT
+  # This only works on Linux for now, but might as well make it generic for the
+  # future
+  spec.platform = Gem::Platform::CURRENT
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
 
-	spec.executables = "rust_example"
+  spec.executables = "rust_example"
 
-	spec.extensions << "ext/rust_example/extconf.rb"
+  spec.extensions << "ext/rust_example/extconf.rb"
 end
