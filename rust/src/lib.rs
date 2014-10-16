@@ -20,14 +20,29 @@ pub extern "C" fn hello_rust() -> *const u8 {
 
 /// `fill_slice` fills up a `buffer` with "Hello, world!"
 ///
-/// # DANGER WILL ROBINSON
+/// # Unsafe
 ///
 /// This function assumes that you've allocated at least fourteen bytes of memory at `buffer`. If
 /// you haven't, bad things may happen.
 #[no_mangle]
-pub extern "C" fn fill_slice(buffer: *mut u8) {
+pub unsafe extern "C" fn fill_slice(buffer: *mut u8) {
     let s = "Hello, world!\0";
-    unsafe { rlibc::memcpy(buffer, s.as_ptr(), s.as_bytes().len()) };
+
+    rlibc::memcpy(buffer, s.as_ptr(), s.as_bytes().len());
+}
+
+pub trait FillSlice {
+    fn fill_slice(&mut self);
+}
+
+impl<'a> FillSlice for &'a [u8] {
+    fn fill_slice(&mut self) {
+        if self.len() < 14 {
+            fail!("Tried to fill the slice with too much stuff.");
+        }
+
+        fill_slice(self)
+    }
 }
 
 #[no_mangle]
