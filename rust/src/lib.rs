@@ -17,6 +17,12 @@ pub extern "C" fn hello_rust() -> *const u8 {
     "Hello, world!\0".as_ptr()
 }
 
+/// `fill_slice` fills up a `buffer` with "Hello, world!"
+///
+/// # DANGER WILL ROBINSON
+///
+/// This function assumes that you've allocated at least fourteen bytes of memory at `buffer`. If
+/// you haven't, bad things may happen.
 #[no_mangle]
 pub extern "C" fn fill_slice(buffer: *mut u8) {
     unsafe { rlibc::memcpy(buffer, "Hello, world!\0".as_ptr(), 14) };
