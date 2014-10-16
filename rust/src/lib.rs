@@ -7,6 +7,7 @@ extern crate core;
 extern crate rlibc;
 
 use core::str::StrSlice;
+use core::collections::Collection;
 
 #[lang = "stack_exhausted"] extern fn stack_exhausted() {}
 #[lang = "eh_personality"] extern fn eh_personality() {}
@@ -25,7 +26,8 @@ pub extern "C" fn hello_rust() -> *const u8 {
 /// you haven't, bad things may happen.
 #[no_mangle]
 pub extern "C" fn fill_slice(buffer: *mut u8) {
-    unsafe { rlibc::memcpy(buffer, "Hello, world!\0".as_ptr(), 14) };
+    let s = "Hello, world!\0";
+    unsafe { rlibc::memcpy(buffer, s.as_ptr(), s.as_bytes().len()) };
 }
 
 #[no_mangle]
