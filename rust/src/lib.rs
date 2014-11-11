@@ -6,12 +6,11 @@
 extern crate core;
 extern crate rlibc;
 
-use core::str::StrSlice;
-use core::collections::Collection;
+use core::str::StrPrelude;
 
 #[lang = "stack_exhausted"] extern fn stack_exhausted() {}
 #[lang = "eh_personality"] extern fn eh_personality() {}
-#[lang = "fail_fmt"] extern fn fail_fmt() {}
+#[lang = "panic_fmt"] extern fn panic_fmt() {}
 
 #[no_mangle]
 pub extern "C" fn hello_rust() -> *const u8 {
@@ -28,21 +27,7 @@ pub extern "C" fn hello_rust() -> *const u8 {
 pub unsafe extern "C" fn fill_slice(buffer: *mut u8) {
     let s = "Hello, world!\0";
 
-    rlibc::memcpy(buffer, s.as_ptr(), s.as_bytes().len());
-}
-
-pub trait FillSlice {
-    fn fill_slice(&mut self);
-}
-
-impl<'a> FillSlice for &'a [u8] {
-    fn fill_slice(&mut self) {
-        if self.len() < 14 {
-            fail!("Tried to fill the slice with too much stuff.");
-        }
-
-        fill_slice(self)
-    }
+    rlibc::memcpy(buffer, s.as_ptr(), 14);
 }
 
 #[no_mangle]
