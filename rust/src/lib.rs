@@ -6,7 +6,7 @@
 extern crate core;
 extern crate rlibc;
 
-use core::str::StrPrelude;
+use core::str::StrExt;
 
 #[lang = "stack_exhausted"] extern fn stack_exhausted() {}
 #[lang = "eh_personality"] extern fn eh_personality() {}
