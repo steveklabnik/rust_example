@@ -1,12 +1,14 @@
 #![no_std]
 
+#![feature(core)]
+#![feature(no_std)]
 #![feature(lang_items)]
 #![feature(intrinsics)]
 
 extern crate core;
 extern crate rlibc;
 
-use core::str::StrPrelude;
+use core::str::StrExt;
 
 #[lang = "stack_exhausted"] extern fn stack_exhausted() {}
 #[lang = "eh_personality"] extern fn eh_personality() {}
