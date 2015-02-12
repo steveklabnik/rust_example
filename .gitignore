@@ -19,4 +19,4 @@ tmp
 *.bundle
 mkmf.log
 target
-ext/rust_example/Makefile
+ruby/ext/rust_example/Makefile
