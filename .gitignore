@@ -20,3 +20,6 @@ tmp
 mkmf.log
 target
 ruby/ext/rust_example/Makefile
+ruby/ext/rust_example/rust_example.o
+ruby/ext/rust_example/rust_example.so
+ruby/ext/rust_example/librust_example.a
