@@ -32,6 +32,7 @@ To build, like with all Cargo projects, just type
     $ cargo build
 
 inside the `rust` directory.
+It requires Rust Nightly.
 
 ## Ruby
 
