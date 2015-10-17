@@ -1,11 +1,10 @@
 #![no_std]
 
-#![feature(core)]
+#![feature(core_str_ext)]
 #![feature(no_std)]
 #![feature(lang_items)]
 #![feature(intrinsics)]
 
-extern crate core;
 extern crate rlibc;
 
 use core::str::StrExt;
