@@ -20,3 +20,6 @@ tmp
 mkmf.log
 target
 ruby/ext/rust_example/Makefile
+node/tmp
+node/bin
+node/node_modules
