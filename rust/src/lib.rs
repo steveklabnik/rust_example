@@ -20,6 +20,11 @@ pub unsafe extern "C" fn fill_slice(buffer: *mut u8) {
 }
 
 #[no_mangle]
+pub extern "C" fn num() -> i32 {
+    5
+}
+
+#[no_mangle]
 pub extern "C" fn rust_example_init() { }
 
 #[lang = "eh_personality"] extern fn eh_personality() {}
