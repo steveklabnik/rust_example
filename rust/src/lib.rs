@@ -1,17 +1,5 @@
-#![no_std]
-
-#![feature(core_str_ext)]
-#![feature(no_std)]
 #![feature(lang_items)]
-#![feature(intrinsics)]
-
-extern crate rlibc;
-
-use core::str::StrExt;
-
-#[lang = "stack_exhausted"] extern fn stack_exhausted() {}
-#[lang = "eh_personality"] extern fn eh_personality() {}
-#[lang = "panic_fmt"] extern fn panic_fmt() {}
+#![no_std]
 
 #[no_mangle]
 pub extern "C" fn hello_rust() -> *const u8 {
@@ -28,8 +16,11 @@ pub extern "C" fn hello_rust() -> *const u8 {
 pub unsafe extern "C" fn fill_slice(buffer: *mut u8) {
     let s = "Hello, world!\0";
 
-    rlibc::memcpy(buffer, s.as_ptr(), 14);
+    core::intrinsics::copy_nonoverlapping(s.as_ptr(), buffer, 14);
 }
 
 #[no_mangle]
 pub extern "C" fn rust_example_init() { }
+
+#[lang = "eh_personality"] extern fn eh_personality() {}
+#[lang = "panic_fmt"] fn panic_fmt() -> ! { loop {} }
