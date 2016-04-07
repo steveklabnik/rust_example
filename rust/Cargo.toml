@@ -6,7 +6,7 @@ authors = ["Steve Klabnik <steve@steveklabnik.com>"]
 
 [lib]
 name = "rust_example"
-crate_type = ["staticlib"]
+crate_type = ["staticlib", "dylib"]
 
 [dependencies]
 libc="0.2.0"
