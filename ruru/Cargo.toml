@@ -1,0 +1,11 @@
+[package]
+name = "ruru"
+version = "0.1.0"
+authors = ["Steve Klabnik <steve@steveklabnik.com>"]
+
+[lib]
+name = "rurulol"
+crate-type = ["dylib"]
+
+[dependencies]
+ruru = { path = "/home/steve/src/ruru" }
