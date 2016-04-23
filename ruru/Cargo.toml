@@ -8,4 +8,4 @@ name = "rurulol"
 crate-type = ["dylib"]
 
 [dependencies]
-ruru = { path = "/home/steve/src/ruru" }
+ruru = { git = "https://github.com/steveklabnik/ruru" }
