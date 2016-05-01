@@ -8,4 +8,4 @@ name = "rurulol"
 crate-type = ["dylib"]
 
 [dependencies]
-ruru = { git = "https://github.com/steveklabnik/ruru" }
+ruru = "^0.6.0"
