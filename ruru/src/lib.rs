@@ -29,7 +29,8 @@ methods!(
 );
 
 #[no_mangle]
-pub extern fn initialize_my_app() {
+#[allow(non_snake_case)]
+pub extern fn Init_librurulol() {
     Class::new("Calculator").define(|itself| {
         itself.def("pow_3", pow_3);
     });
