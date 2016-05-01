@@ -1,27 +1,32 @@
 #![no_std]
+
+#[macro_use]
 extern crate ruru;
 
 use ruru::VM;
 use ruru::Hash;
 use ruru::Fixnum;
 use ruru::Class;
-use ruru::types::Argc;
 use ruru::AnyObject;
+use ruru::types::{Argc, Value};
+use ruru::traits::Object;
 
-#[no_mangle]
-pub extern fn pow_3(argc: Argc, argv: *const AnyObject, _: Fixnum) -> Hash {
-    let argv = VM::parse_arguments(argc, argv);
-    let num = argv[0].as_fixnum().to_i64();
+class!(Calculator);
 
-    let mut hash = Hash::new();
+methods!(
+    Calculator,
+    itself,
 
-    for i in 1..num + 1 {
-        hash.store(Fixnum::new(i), Fixnum::new(i.pow(3)));
+    pow_3(num: Fixnum) -> Hash {
+        let mut hash = Hash::new();
+
+        for i in 1..num.to_i64() + 1 {
+            hash.store(Fixnum::new(i), Fixnum::new(i.pow(3)));
+        }
+
+        hash
     }
-
-    hash
-}
-
+);
 
 #[no_mangle]
 pub extern fn initialize_my_app() {
