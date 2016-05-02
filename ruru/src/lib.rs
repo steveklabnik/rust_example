@@ -17,7 +17,7 @@ methods!(
     Calculator,
     itself,
 
-    pow_3(num: Fixnum) -> Hash {
+    fn pow_3(num: Fixnum) -> Hash {
         let mut hash = Hash::new();
 
         for i in 1..num.to_i64() + 1 {
